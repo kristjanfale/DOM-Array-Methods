@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  margin: 0 auto;
+  width: 800px;
+  max-width: 100%;
+}
+
+.container aside {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #000;
+}
+
+.container aside button {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.container aside button:hover {
+  background-color: #f4f4f4;
+}
+
+.container aside button:focus {
+  outline: none;
+}
+
+.container main {
+  flex: 3;
+  margin: 0 10px;
+}
+
+.container main h2 {
+  padding: 7px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  font-weight: 400;
+}
+
+.container main h3 {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  font-weight: 400;
+}
+
+.person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
