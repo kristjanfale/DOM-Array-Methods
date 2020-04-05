@@ -46,6 +46,14 @@ function sortByRichest() {
   updateDOM(); // data is passed in by default
 }
 
+function showOnlyMillionaires() {
+  data = data.filter((user) => {
+    return user.money > 1000000;
+  });
+
+  updateDOM(); // data is passed in by default
+}
+
 // Add new obj to data arr
 function addData(obj) {
   data.push(obj);
@@ -77,6 +85,6 @@ function formatMoney(number) {
 // Event Listeners
 addUser.addEventListener('click', getUser);
 double.addEventListener('click', doubleMoney);
-// showMillionaires.addEventListener('click', showOnlyMillionaires);
+showMillionaires.addEventListener('click', showOnlyMillionaires);
 sort.addEventListener('click', sortByRichest);
 // calculateWealth.addEventListener('click');
