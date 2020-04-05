@@ -28,9 +28,19 @@ async function getUser() {
 }
 
 // Double everyones money
+// map() returns new array
 function doubleMoney() {
   data = data.map((user) => {
     return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM(); // data is passed in by default
+}
+
+// Sort users by richest
+function sortByRichest() {
+  data.sort((a, b) => {
+    return b.money - a.money;
   });
 
   updateDOM(); // data is passed in by default
@@ -67,6 +77,6 @@ function formatMoney(number) {
 // Event Listeners
 addUser.addEventListener('click', getUser);
 double.addEventListener('click', doubleMoney);
-showMillionaires.addEventListener('click');
-sort.addEventListener('click');
-calculateWealth.addEventListener('click');
+// showMillionaires.addEventListener('click', showOnlyMillionaires);
+sort.addEventListener('click', sortByRichest);
+// calculateWealth.addEventListener('click');
