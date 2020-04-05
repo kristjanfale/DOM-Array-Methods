@@ -27,11 +27,20 @@ async function getUser() {
   addData(newUser);
 }
 
+// Double everyones money
+function doubleMoney() {
+  data = data.map((user) => {
+    return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM(); // data is passed in by default
+}
+
 // Add new obj to data arr
 function addData(obj) {
   data.push(obj);
 
-  updateDOM();
+  updateDOM(); // data is passed in by default
 }
 
 // Update DOM (If nothing is passed in, use data array as default)
@@ -57,7 +66,7 @@ function formatMoney(number) {
 
 // Event Listeners
 addUser.addEventListener('click', getUser);
-double.addEventListener('click');
+double.addEventListener('click', doubleMoney);
 showMillionaires.addEventListener('click');
 sort.addEventListener('click');
 calculateWealth.addEventListener('click');
