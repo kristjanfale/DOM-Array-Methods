@@ -46,12 +46,25 @@ function sortByRichest() {
   updateDOM(); // data is passed in by default
 }
 
+// Filter only millionaires
 function showOnlyMillionaires() {
   data = data.filter((user) => {
     return user.money > 1000000;
   });
 
   updateDOM(); // data is passed in by default
+}
+
+// Calculate the total wealth
+function calculateAllWealth() {
+  const wealth = data.reduce((acc, user) => (acc += user.money), 0);
+
+  const wealthEl = document.createElement('div');
+  wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(
+    wealth
+  )}</strong></h3>`;
+
+  main.appendChild(wealthEl);
 }
 
 // Add new obj to data arr
@@ -87,4 +100,4 @@ addUser.addEventListener('click', getUser);
 double.addEventListener('click', doubleMoney);
 showMillionaires.addEventListener('click', showOnlyMillionaires);
 sort.addEventListener('click', sortByRichest);
-// calculateWealth.addEventListener('click');
+calculateWealth.addEventListener('click', calculateAllWealth);
